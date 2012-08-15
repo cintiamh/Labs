@@ -15,7 +15,8 @@ ArrayList spheres;
 ArrayList allSpheres;
 
 void setup() {
-	size(1024, 768);
+	//size(1024, 768);
+	size(900, 675);
 	smooth();
 	frameRate(40);
 	mousePos = new PVector();
@@ -42,9 +43,6 @@ void setup() {
 	}
 	
 	calculateTotalVol();
-	//for (int i = 0; i < 4; i++) {
-		//addNewSphere(new Sphere(random(30 + i, width - 30 -i), random(30 + i, height - 30 - i), 30 + i *10));
-	//}
 }
 
 void buildLevel1() {
@@ -205,13 +203,13 @@ void checkGameOver() {
 	if (mainSphere.radius <= 0) {
 		fill(#ffffff);
 		textFont("Arial", 70);
-		text("Game Over", 350, height/2);
+		text("Game Over", 330, height/2);
 	}
 	mainSphere.calculateMass();
 	if (mainSphere.mass >= totalVol*0.9) {
 		fill(#ffffff);
 		textFont("Arial", 70);
-		text("You Win", 350, height/2);
+		text("You Win", 330, height/2);
 	}
 }
 
