@@ -15,7 +15,7 @@ ArrayList spheres;
 ArrayList allSpheres;
 
 void setup() {
-	size(1024, 768);
+	size(900, 675);
 	smooth();
 	frameRate(40);
 	mousePos = new PVector();
@@ -42,9 +42,6 @@ void setup() {
 	}
 	
 	calculateTotalVol();
-	//for (int i = 0; i < 4; i++) {
-		//addNewSphere(new Sphere(random(30 + i, width - 30 -i), random(30 + i, height - 30 - i), 30 + i *10));
-	//}
 }
 
 void buildLevel1() {
@@ -58,36 +55,36 @@ void buildLevel1() {
 }
 
 void buildLevel2() {
-	mainSphere = new Sphere(width/2, height/2, 40);
+	mainSphere = new Sphere(width/2, height/2, 35);
 	mainSphere.setColor(mainColor, generalAlpha);
 	allSpheres.add(mainSphere);
 		
 	// big spheres
-	addNewSphere(new Sphere(100, 90, 65));
-	addNewSphere(new Sphere(360, 300, 50));
-	addNewSphere(new Sphere(490, 100, 55));
-	addNewSphere(new Sphere(650, 250, 60));
-	addNewSphere(new Sphere(120, 500, 70));
-	addNewSphere(new Sphere(350, 650, 55));
-	addNewSphere(new Sphere(900, 550, 60));
-	addNewSphere(new Sphere(850, 100, 90));
-	addNewSphere(new Sphere(600, 550, 80));
+	addNewSphere(new Sphere(88, 79, 57));
+	addNewSphere(new Sphere(316, 264, 44));
+	addNewSphere(new Sphere(431, 88, 48));
+	addNewSphere(new Sphere(571, 220, 53));
+	addNewSphere(new Sphere(105, 439, 62));
+	addNewSphere(new Sphere(308, 571, 48));
+	addNewSphere(new Sphere(791, 483, 53));
+	addNewSphere(new Sphere(747, 88, 79));
+	addNewSphere(new Sphere(527, 483, 70));
 		
 	// small spheres
-	addNewSphere(new Sphere(75, 705, 20));
-	addNewSphere(new Sphere(75, 250, 25));
-	addNewSphere(new Sphere(60, 350, 20));
-	addNewSphere(new Sphere(225, 720, 15));
-	addNewSphere(new Sphere(205, 625, 20));
-	addNewSphere(new Sphere(280, 70, 25));
-	addNewSphere(new Sphere(350, 60, 15));
-	addNewSphere(new Sphere(230, 130, 20));
-	addNewSphere(new Sphere(950, 415, 25));
-	addNewSphere(new Sphere(160, 300, 20));
-	addNewSphere(new Sphere(900, 300, 20));
-	addNewSphere(new Sphere(775, 633, 20));
-	addNewSphere(new Sphere(955, 730, 25));
-	addNewSphere(new Sphere(725, 710, 15));
+	addNewSphere(new Sphere(66, 620, 18));
+	addNewSphere(new Sphere(66, 220, 22));
+	addNewSphere(new Sphere(53, 308, 18));
+	addNewSphere(new Sphere(198, 633, 13));
+	addNewSphere(new Sphere(180, 549, 18));
+	addNewSphere(new Sphere(246, 61, 22));
+	addNewSphere(new Sphere(308, 53, 13));
+	addNewSphere(new Sphere(202, 114, 18));
+	addNewSphere(new Sphere(835, 365, 22));
+	addNewSphere(new Sphere(141, 264, 18));
+	addNewSphere(new Sphere(791, 264, 18));
+	addNewSphere(new Sphere(681, 556, 18));
+	addNewSphere(new Sphere(839, 642, 22));
+	addNewSphere(new Sphere(637, 624, 13));
 }
 
 void addNewSphere(Sphere newSphere) {
