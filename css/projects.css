@@ -1,7 +1,23 @@
-.project_item {
-	
+section.project_tiles {
+    width: 900px;
+    clear: both;
+}
+
+article.project_item {
+    float: left;
+    margin: 0;
+    margin-bottom: 40px;
+    padding: 0;
+    width: 100%;
 }
 
 .project_item h1 {
 	font-size: 24px;
+}
+
+.project_image {
+    width: 500px;
+    height: 200px;
+    background-color: #333;
+    overflow: hidden;
 }

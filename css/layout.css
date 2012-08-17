@@ -96,6 +96,7 @@ a:hover {
 
 section#center {
     width: 100%;
+    clear: both;
 }
 
 footer {
