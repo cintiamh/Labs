@@ -1,15 +1,19 @@
 $(document).ready(function() {
 
-	var data = [ 16, 68, 20, 30, 54 ];
+	var data = [ 16, 68, 20, 30, 54, 38, 20, 80, 20, 10, 55, 90 ];
+	var canvasw = 900;
+	var canvash = 500;
 	var canvas = document.getElementById('canvas');
 	var c = canvas.getContext("2d");
+	canvas.width = canvasw;
+	canvas.height = canvash;
 	c.fillStyle = "white";
-	c.fillRect(0, 0, 500, 500);
+	c.fillRect(0, 0, canvasw, canvash);
 
 	c.fillStyle = "blue";
 	for ( var i = 0; i < data.length; i++) {
 		var dp = data[i];
-		c.fillRect(40 + i * 100, 460 - dp * 5, 50, dp * 5);
+		c.fillRect(40 + i * 70, 460 - dp * 5, 50, dp * 5);
 	}
 
 	// draw axis lines
@@ -18,7 +22,7 @@ $(document).ready(function() {
 	c.beginPath();
 	c.moveTo(30, 10);
 	c.lineTo(30, 460);
-	c.lineTo(490, 460);
+	c.lineTo(890, 460);
 	c.stroke();
 
 	// draw text and vertical lines
@@ -31,9 +35,9 @@ $(document).ready(function() {
 		c.stroke();
 	}
 
-	var labels = [ "JAN", "FEB", "MAR", "APR", "MAY" ];
-	for ( var i = 0; i < 5; i++) {
-		c.fillText(labels[i], 50 + i * 100, 475);
+	var labels = [ "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC" ];
+	for ( var i = 0; i < labels.length; i++) {
+		c.fillText(labels[i], 50 + i * 70, 475);
 	}
 
 	//

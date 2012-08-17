@@ -1,0 +1,10 @@
+.chart_fields_row {
+	display: block;
+	width: 100%;
+}
+
+.month_field {
+	width: 75px;
+	float: left;
+	vertical-align: bottom;
+}
