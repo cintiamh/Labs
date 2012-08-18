@@ -48,7 +48,7 @@ function updateParticles() {
 function killParticles() {
 	for (var i in particles) {
 		var part = particles[i];
-		if (part.y + 2 * part.radius > canvas.height) {
+		if (part.y > canvas.height) {
 			part.x = Math.random()*canvas.width;
 			part.y = 0;
 			part.speed = 2 + Math.random() * 3;
