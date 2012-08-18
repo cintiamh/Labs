@@ -2,11 +2,8 @@
 var monthData = createRandomNumArray(12);
 var pieData = createRandomNumArray(6);
 
-$(document).ready(function() {
-
-	drawBarChart('canvas');
-	drawLineChart('line_canvas');
-	drawPieChart();
+$(document).ready(function(){
+	refreshData();
 });
 
 function generateNumber(min, max) {
@@ -22,6 +19,15 @@ function createRandomNumArray(len) {
 	}
 	
 	return numArray;
+}
+
+function refreshData() {
+	monthData = createRandomNumArray(12);
+	pieData = createRandomNumArray(6);
+	
+	drawBarChart('canvas');
+	drawLineChart('line_canvas');
+	drawPieChart();
 }
 
 function drawBarChart(canvas_name) {
@@ -89,7 +95,7 @@ function drawLineChart(canvas_name) {
 	var canvasw = 900;
 	var canvash = 500;
 	var gPadding = 40;
-	var pRadius = 2;
+	var pRadius = 3;
 	
 	// calculated values
 	var barSpace = (canvasw - 2 * gPadding) / monthData.length;
@@ -105,20 +111,44 @@ function drawLineChart(canvas_name) {
 	c.fillStyle = "#333333";
 	c.fillRect(0, 0, canvasw, canvash);
 	
+	// draw lines connecting points
+	c.strokeStyle = "#5CB3FF";
+	c.lineWidth = 1.0;
+	c.beginPath();
+	
+	for (var j = 0; j < monthData.length; j++) {
+		var xPos = gPadding + j * barSpace + barSpace / 2;
+		var yPos = canvash - gPadding - monthData[j] * barHeightUnit;
+		
+		if (i === 0) {
+			c.moveTo(xPos, yPos);
+		} else  {
+			c.lineTo(xPos, yPos);
+		}
+	}
+	
+	c.stroke();
+	c.closePath();
+	
 	// draw chart points
 	for ( var i = 0; i < monthData.length; i++) {
 		var dp = monthData[i];
+		var xPos = gPadding + i * barSpace + barSpace/2;
+		var yPos = canvash - gPadding - dp * barHeightUnit;
 		c.fillStyle = "#0F67A1";
-		//c.fillRect(gPadding + i * barSpace + iniPosX, canvash - gPadding - dp * barHeightUnit, barWidth, dp * barHeightUnit);
+		
 		c.beginPath();
-		c.arc(gPadding + i * barSpace + iniPosX, canvash - gPadding - dp * barHeightUnit, pRadius, 0, Math.PI * 2, true);
+		c.arc(xPos, yPos, pRadius, 0, Math.PI*2, true);
 		c.closePath();
 		c.fill();
+		
 		c.fillStyle = "#eeeeee";
 		var text = monthData[i] + "";
 		var txtWidth = c.measureText(text).width;
 		c.fillText(monthData[i], gPadding + i * barSpace + barSpace/2 - txtWidth/2, canvash - gPadding - dp * barHeightUnit - 5);
 	}
+	
+	
 
 	// draw axis lines
 	c.strokeStyle = "#eeeeee";
@@ -147,15 +177,15 @@ function drawLineChart(canvas_name) {
 }
 
 function drawPieChart() {
-	var pieData = [ 100, 68, 20, 30, 100 ];
 
 	var pieCanvas = document.getElementById('piechart');
 	var pieC = pieCanvas.getContext("2d");
+	
+	var darkColors = ["#C11B17", "#F76541", "#FDD017", "#348017", "#153E7E", "#F6358A"];
+	var lightColors = ["#E77471", "#F9966B", "#FFFF00", "#5EFB6E", "#1589FF", "#F9B7FF"];
 
-	pieC.fillStyle = "white";
+	pieC.fillStyle = "#333333";
 	pieC.fillRect(0, 0, 500, 500);
-
-	var colors = [ "orange", "green", "blue", "yellow", "teal" ];
 
 	var total = 0;
 	for ( var i = 0; i < pieData.length; i++) {
@@ -163,17 +193,14 @@ function drawPieChart() {
 	}
 
 	// draw pie data
-
 	var prevAngle = 0;
 	for ( var i = 0; i < pieData.length; i++) {
 		var fraction = pieData[i] / total;
 		var angle = prevAngle + fraction * Math.PI * 2;
 
-		//pieC.fillStyle = colors[i];
-
 		var grad = pieC.createRadialGradient(250, 250, 10, 250, 250, 100);
-		grad.addColorStop(0, "white");
-		grad.addColorStop(1, colors[i]);
+		grad.addColorStop(0, lightColors[i]);
+		grad.addColorStop(1, darkColors[i]);
 		pieC.fillStyle = grad;
 
 		pieC.beginPath();
@@ -183,14 +210,14 @@ function drawPieChart() {
 
 		pieC.fill();
 
-		pieC.strokeStyle = "black";
+		pieC.strokeStyle = "#FFFFFF";
 		pieC.stroke();
 
 		prevAngle = angle;
 	}
 
 	// draw centered text
-	pieC.fillStyle = "black";
+	pieC.fillStyle = "#FFFFFF";
 	pieC.font = "24pt sans-serif";
 	var text = "Sales Data from 2012";
 	var metrics = pieC.measureText(text);
