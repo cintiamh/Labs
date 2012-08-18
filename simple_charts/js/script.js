@@ -1,49 +1,152 @@
+// fist set of random numbers.
+var monthData = createRandomNumArray(12);
+var pieData = createRandomNumArray(6);
+
 $(document).ready(function() {
 
-	var data = [ 16, 68, 20, 30, 54, 38, 20, 80, 20, 10, 55, 90 ];
+	drawBarChart('canvas');
+	drawLineChart('line_canvas');
+	drawPieChart();
+});
+
+function generateNumber(min, max) {
+	var range = max - min;
+	return Math.round(min + Math.random() * range); 
+}
+
+function createRandomNumArray(len) {
+	var numArray = new Array();
+	
+	for (var i = 0; i < len; i++) {
+		numArray[i] = generateNumber(0, 100);
+	}
+	
+	return numArray;
+}
+
+function drawBarChart(canvas_name) {
+	// input number values
 	var canvasw = 900;
 	var canvash = 500;
-	var canvas = document.getElementById('canvas');
+	var gPadding = 40;
+	
+	// calculated values
+	var barSpace = (canvasw - 2 * gPadding) / monthData.length;
+	var barWidth = Math.floor(barSpace * 0.8);
+	var barHeightUnit = Math.round((canvash - 2 * gPadding) / 100);
+	var topDiff = canvash - barHeightUnit * 100 - gPadding;
+	var iniPosX = (barSpace - barWidth) / 2;
+	
+	var canvas = document.getElementById(canvas_name);
 	var c = canvas.getContext("2d");
 	canvas.width = canvasw;
 	canvas.height = canvash;
-	c.fillStyle = "white";
+	
+	// draw background
+	c.fillStyle = "#333333";
 	c.fillRect(0, 0, canvasw, canvash);
-
-	c.fillStyle = "blue";
-	for ( var i = 0; i < data.length; i++) {
-		var dp = data[i];
-		c.fillRect(40 + i * 70, 460 - dp * 5, 50, dp * 5);
+	
+	// draw bar chart boxes
+	var monthLen = monthData.length;
+	for ( var i = 0; i < monthData.length; i++) {
+		var dp = monthData[i];
+		c.fillStyle = "#0F67A1";
+		c.fillRect(gPadding + i * barSpace + iniPosX, canvash - gPadding - dp * barHeightUnit, barWidth, dp * barHeightUnit);
+		c.fillStyle = "#eeeeee";
+		var text = monthData[i] + "";
+		var txtWidth = c.measureText(text).width;
+		c.fillText(monthData[i], gPadding + i * barSpace + barSpace/2 - txtWidth/2, canvash - gPadding - dp * barHeightUnit - 5);
 	}
 
 	// draw axis lines
-	c.fillStyle = "black";
+	c.strokeStyle = "#eeeeee";
 	c.lineWidth = 2.0;
 	c.beginPath();
-	c.moveTo(30, 10);
-	c.lineTo(30, 460);
-	c.lineTo(890, 460);
+	c.moveTo(gPadding, gPadding);
+	c.lineTo(gPadding, canvash - gPadding);
+	c.lineTo(canvasw - gPadding, canvash - gPadding);
 	c.stroke();
 
 	// draw text and vertical lines
-	c.fillStyle = "black";
+	c.fillStyle = "#eeeeee";
 	for ( var i = 0; i < 6; i++) {
-		c.fillText((5 - i) * 20 + "", 4, i * 80 + 60);
+		c.fillText((5 - i) * 20 + "", 10, i * barHeightUnit * 20 + topDiff);
 		c.beginPath();
-		c.moveTo(25, i * 80 + 60);
-		c.lineTo(30, i * 80 + 60);
+		c.moveTo(gPadding - 5, i * barHeightUnit * 20 + topDiff);
+		c.lineTo(gPadding, i * barHeightUnit * 20 + topDiff);
 		c.stroke();
 	}
 
 	var labels = [ "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC" ];
 	for ( var i = 0; i < labels.length; i++) {
-		c.fillText(labels[i], 50 + i * 70, 475);
+		var txtWidth = c.measureText(labels[i]).width;
+		c.fillText(labels[i], gPadding + i * barSpace + barSpace/2 - txtWidth/2, canvash - gPadding/2);
+	}
+}
+
+function drawLineChart(canvas_name) {
+	// input number values
+	var canvasw = 900;
+	var canvash = 500;
+	var gPadding = 40;
+	var pRadius = 2;
+	
+	// calculated values
+	var barSpace = (canvasw - 2 * gPadding) / monthData.length;
+	var barHeightUnit = Math.round((canvash - 2 * gPadding) / 100);
+	var topDiff = canvash - barHeightUnit * 100 - gPadding;
+	
+	var canvas = document.getElementById(canvas_name);
+	var c = canvas.getContext("2d");
+	canvas.width = canvasw;
+	canvas.height = canvash;
+	
+	// draw background
+	c.fillStyle = "#333333";
+	c.fillRect(0, 0, canvasw, canvash);
+	
+	// draw chart points
+	for ( var i = 0; i < monthData.length; i++) {
+		var dp = monthData[i];
+		c.fillStyle = "#0F67A1";
+		//c.fillRect(gPadding + i * barSpace + iniPosX, canvash - gPadding - dp * barHeightUnit, barWidth, dp * barHeightUnit);
+		c.beginPath();
+		c.arc(gPadding + i * barSpace + iniPosX, canvash - gPadding - dp * barHeightUnit, pRadius, 0, Math.PI * 2, true);
+		c.closePath();
+		c.fill();
+		c.fillStyle = "#eeeeee";
+		var text = monthData[i] + "";
+		var txtWidth = c.measureText(text).width;
+		c.fillText(monthData[i], gPadding + i * barSpace + barSpace/2 - txtWidth/2, canvash - gPadding - dp * barHeightUnit - 5);
 	}
 
-	//
-	// Pie Chart
-	//
+	// draw axis lines
+	c.strokeStyle = "#eeeeee";
+	c.lineWidth = 2.0;
+	c.beginPath();
+	c.moveTo(gPadding, gPadding);
+	c.lineTo(gPadding, canvash - gPadding);
+	c.lineTo(canvasw - gPadding, canvash - gPadding);
+	c.stroke();
 
+	// draw text and vertical lines
+	c.fillStyle = "#eeeeee";
+	for ( var i = 0; i < 6; i++) {
+		c.fillText((5 - i) * 20 + "", 10, i * barHeightUnit * 20 + topDiff);
+		c.beginPath();
+		c.moveTo(gPadding - 5, i * barHeightUnit * 20 + topDiff);
+		c.lineTo(gPadding, i * barHeightUnit * 20 + topDiff);
+		c.stroke();
+	}
+
+	var labels = [ "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC" ];
+	for ( var i = 0; i < labels.length; i++) {
+		var txtWidth = c.measureText(labels[i]).width;
+		c.fillText(labels[i], gPadding + i * barSpace + barSpace/2 - txtWidth/2, canvash - gPadding/2);
+	}
+}
+
+function drawPieChart() {
 	var pieData = [ 100, 68, 20, 30, 100 ];
 
 	var pieCanvas = document.getElementById('piechart');
@@ -92,4 +195,4 @@ $(document).ready(function() {
 	var text = "Sales Data from 2012";
 	var metrics = pieC.measureText(text);
 	pieC.fillText(text, 250 - metrics.width / 2, 400);
-});
+}
