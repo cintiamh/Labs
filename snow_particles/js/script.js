@@ -14,6 +14,7 @@ var particles = [];
 var tick = 0;
 var canvasw = 900;
 var canvash = 500;
+var snowChar = String.fromCharCode(10052);
 
 function loop() {
 	createParticles();
@@ -31,7 +32,8 @@ function createParticles() {
 				x: Math.random()*canvas.width,
 				y: 0,
 				speed: 2 + Math.random() * 3,
-				radius: 5 + Math.random() * 5,
+				//radius: 5 + Math.random() * 5,
+				size: 15 + Math.random() * 10,
 				color: "#FFFFFF"
 			});
 		}
@@ -52,7 +54,7 @@ function killParticles() {
 			part.x = Math.random()*canvas.width;
 			part.y = 0;
 			part.speed = 2 + Math.random() * 3;
-			part.radius = 5 + Math.random() * 5;
+			part.size = 15 + Math.random() * 10;
 		}
 	}
 }
@@ -68,11 +70,14 @@ function drawParticles() {
 	
 	for (var i in particles) {
 		var part = particles[i];
-		ctx.beginPath();
-		ctx.arc(part.x, part.y, part.radius, 0, Math.PI*2);
-		ctx.closePath();
+		//ctx.beginPath();
+		//ctx.arc(part.x, part.y, part.radius, 0, Math.PI*2);
+		//ctx.closePath();
+		//ctx.fillStyle = part.color;
+		//ctx.fill();
+		ctx.font = "bold " + part.size + "px Arial";//part.size + "px";
 		ctx.fillStyle = part.color;
-		ctx.fill();
+		ctx.fillText(snowChar, part.x, part.y);
 	}
 	
 	ctx.globalAlpha = 1.0;
