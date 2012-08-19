@@ -21,3 +21,12 @@ article.project_item {
     background-color: #333;
     overflow: hidden;
 }
+
+.project_link a {
+	color: #EEEEEE;
+}
+
+.project_link a:hover {
+    color: #FE0B97;
+    text-decoration: none;
+}
