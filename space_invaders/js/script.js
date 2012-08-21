@@ -1,8 +1,14 @@
 // global variables
 var canvas;
 var ctx;
-var aliens;
+var aliens = new Array();
 var createdAliens = false;
+var alien_height = 32;
+var alien1_width = 32;
+var alien2_width = 44;
+var alien3_width = 48;
+var space_btw_h = 16;
+var space_btw_v = 24;
 var alien1a_img;
 var alien1b_img;
 var alien2a_img;
@@ -26,31 +32,15 @@ $(document).ready(function(){
     alien3a_img = document.getElementById("img_alien3a");
     alien3b_img = document.getElementById("img_alien3b");
 
-
-	/*
-    aliens_imgs[0].onload = function() {
-        aliens_loaded[0] = true;
-    };
-    aliens_imgs[1].onload = function() {
-        aliens_loaded[1] = true;
-    };
-    aliens_imgs[2].onload = function() {
-        aliens_loaded[2] = true;
-    };
-    aliens_imgs[3].onload = function() {
-        aliens_loaded[3] = true;
-    };
-    aliens_imgs[4].onload = function() {
-        aliens_loaded[4] = true;
-    };
-    aliens_imgs[5].onload = function() {
-        aliens_loaded[5] = true;
-    };*/
-
-    //createAliens();
-    drawAliens(0, 0);
-    //setInterval(mainLoop, 30);
+    createAliens();
+    drawAliens();
 });
+
+function AlienObj(x, y) {
+    this.x = x;
+    this.y = y;
+    this.destroyed = false;
+}
 
 function mainLoop() {
     //createAliens();
@@ -58,43 +48,13 @@ function mainLoop() {
 }
 
 function createAliens() {
-    if (!createdAliens) {
-        var img_id;
-        var img_width;
-        for (var i = 0; i < 5; i++) {
-            for (var j = 0; j < 11; j++) {
-                if (i == 0) {
-                    img_id = 1;
-                    img_width = 32;
-                    alien1a_img.onload = function(){
-                        ctx.drawImage(alien1a_img, i * (32 + 24), j * (48 + 16));
-                    };
-                }
-                else if (i == 1 || i == 2) {
-                    img_id = 2;
-                    img_width = 44;
-                    alien2a_img.onload = function(){
-                        ctx.drawImage(alien2a_img, i * (32 + 24), j * (48 + 16));
-                    };
-                }
-                else if (i == 3 || i == 4) {
-                    img_id = 3;
-                    img_width = 48;
-                    alien3a_img.onload = function(){
-                        ctx.drawImage(alien3a_img, i * (32 + 24), j * (48 + 16));
-                    };
-                }
-                //alert("createdAliens id: " + img_id + ", w: " + img_width + ", i: " + i + ", j: " + j);
-                //aliens.push ({
-                    //x: i * (32 + 24),
-                    //y: j * (48 + 16),
-                    //w: img_width,
-                    //h: 32,
-                    //img: img_id
-                //});
-            }
-        }
-        createdAliens = true;
+    for (var i = 0; i < 11; i++) {
+        alert("creteAliens i: " + i);
+        aliens[i] = new AlienObj(i * (space_btw_h + alien3_width) + (alien3_width - alien1_width) / 2, 0);
+        aliens[i + 12] = new AlienObj(i * (space_btw_h + alien3_width) + (alien3_width - alien1_width) / 2, space_btw_v + alien_height);
+        aliens[i + 2*12] = new AlienObj(i * (space_btw_h + alien3_width) + (alien3_width - alien1_width) / 2, 2*(space_btw_v + alien_height));
+        //aliens[i] = new AlienObj(j * (space_btw_h + alien3_width) + (alien3_width - alien2_width) / 2, i * (space_btw_v + alien_height));
+        //aliens[i] = new AlienObj(j * (space_btw_h + alien3_width), i * (space_btw_v + alien_height));
     }
 }
 
@@ -102,9 +62,15 @@ function updateAliens() {
 
 }
 
-function drawAliens(xPos, yPos) {
-    if (xPos % 2 == 0) {
-        alien1a_img.onload = function(){
+function drawAliens() {
+    alien1a_img.onload = function() {
+        for (var i = 0; i < 11; i++) {
+            if (!aliens[i][0].destroyed) {
+                ctx.drawImage(alien1a_img, aliens[i][0].x, aliens[i][0].y);
+            }
+        }
+    };
+        /*alien1a_img.onload = function(){
             for (var i = 0; i < 11; i++) {
                 ctx.drawImage(alien1a_img, i * (32 + 24), 0);
             }
@@ -122,6 +88,5 @@ function drawAliens(xPos, yPos) {
                     ctx.drawImage(alien3a_img, j * (32 + 24), i * (48 + 16));
                 }
             }
-        }
-    }
+        }*/
 }
