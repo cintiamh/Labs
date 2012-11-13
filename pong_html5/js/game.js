@@ -46,35 +46,37 @@ function drawTable() {
 function checkKeyDown(event) {
     switch(event.keyCode) {
         case 38: // Up arrow
-            if ((pad2_pos[1] - PAD_HEIGHT / 2) > 0) {
-                pad2_vel[1] = -2;
+            if ((pad2_pos[1] - PAD_HEIGHT / 2) <= 0) {
+                pad2_vel[1] = 0;
             }
             else {
-                pad2_vel[1] = 0;
+                pad2_vel[1] = -2;
             }
             break;
         case 40: // Down arrow
-            if ((pad2_pos[1] + PAD_HEIGHT /2) < HEIGHT) {
-                pad2_vel[1] = 2;
+            if ((pad2_pos[1] + PAD_HEIGHT / 2) >= HEIGHT) {
+                pad2_vel[1] = 0;
             }
             else {
-                pad2_vel[1] = 0;
+                pad2_vel[1] = 2;
             }
             break;
         case 87: // W
-            if ((pad1_pos[1] - PAD_HEIGHT / 2) > 0) {
-                pad1_vel[1] = -2;
+            if ((pad1_pos[1] - PAD_HEIGHT / 2) <= 0) {
+                pad1_vel[1] = 0;
+                pad1_pos[1] = PAD_HEIGHT/2;
             }
             else {
-                pad1_vel[1] = 0;
+                pad1_vel[1] = -2;
             }
             break;
         case 83: // S
-            if ((pad1_pos[1] + PAD_HEIGHT /2) < HEIGHT) {
-                pad1_vel[1] = 2;
+            if ((pad1_pos[1] + PAD_HEIGHT / 2) >= HEIGHT) {
+                pad1_vel[1] = 0;
+                pad1_pos[1] = HEIGHT - (PAD_HEIGHT/2);
             }
             else {
-                pad1_vel[1] = 0;
+                pad1_vel[1] = 2;
             }
             break;
     }
@@ -83,14 +85,16 @@ function checkKeyDown(event) {
 function checkKeyUp(event) {
     switch(event.keyCode) {
         case 38: // Up arrow
-            if ((pad2_pos[1] - PAD_HEIGHT / 2) > 0) {
-                pad2_vel[1] = 0;
-            }
+            pad2_vel[1] = 0;
             break;
         case 40: // Down arrow
-            if ((pad2_pos[1] + PAD_HEIGHT /2) < HEIGHT) {
-                pad2_vel[1] = 0;
-            }
+            pad2_vel[1] = 0;
+            break;
+        case 87: // W
+            pad1_vel[1] = 0;
+            break;
+        case 83: // S
+            pad1_vel[1] = 0;
             break;
     }
 }
