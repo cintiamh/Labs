@@ -7,7 +7,7 @@ var PAD_WIDTH = 20;
 var PAD_HEIGHT = 100;
 var ball_pos = [WIDTH/2, HEIGHT/2];
 var ball_radius = 15;
-var ball_vel = [1, 1];
+var ball_vel = [1, -1];
 var pad1_pos = [PAD_WIDTH/2, HEIGHT/2];
 var pad2_pos = [WIDTH - PAD_WIDTH/2, HEIGHT/2];
 var pad1_vel = [0, 0];
@@ -109,9 +109,36 @@ function init() {
     return setInterval(draw, 10);
 }
 
-function updatePositions() {
+function initBall() {
+    ball_pos = [WIDTH/2, HEIGHT/2];
+}
+
+function updateBallPosition() {
+    // check collision with top and bottom
+    if ((ball_pos[1] <= ball_radius) || (ball_pos[1] >= (HEIGHT - ball_radius))) {
+        ball_vel[1] = -ball_vel[1];
+    }
+
+    // check collision with gutter
+    // left side
+    if (ball_pos[0] <= 0) {
+        ball_vel = [1, -1];
+        initBall();
+    }
+    else if (ball_pos[0] >= WIDTH) {
+        ball_vel = [-1, -1];
+        initBall();
+    }
+
+    // check collision with paddle
+
+
     ball_pos[0] += ball_vel[0];
     ball_pos[1] += ball_vel[1];
+}
+
+function updatePositions() {
+
     //pad1_pos[0] += pad1_vel[0];
     pad1_pos[1] += pad1_vel[1];
     //pad2_pos[0] += pad2_vel[0];
@@ -126,6 +153,7 @@ function draw() {
     ctx.strokeStyle = "#FFFFFF";
     drawTable();
 
+    updateBallPosition();
     updatePositions();
 
     drawCircle(ball_pos[0], ball_pos[1], ball_radius);
