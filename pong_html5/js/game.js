@@ -122,16 +122,15 @@ function updateBallPosition() {
     // check collision with gutter
     // left side
     if (ball_pos[0] <= 0) {
+
         ball_vel = [1, -1];
         initBall();
     }
+    // right side
     else if (ball_pos[0] >= WIDTH) {
         ball_vel = [-1, -1];
         initBall();
     }
-
-    // check collision with paddle
-
 
     ball_pos[0] += ball_vel[0];
     ball_pos[1] += ball_vel[1];
