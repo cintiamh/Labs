@@ -11,7 +11,8 @@ var ball_vel = [1, -1];
 var pad1_pos = [PAD_WIDTH/2, HEIGHT/2];
 var pad2_pos = [WIDTH - PAD_WIDTH/2, HEIGHT/2];
 var pad1_vel = [0, 0];
-var pad2_vel = [0, 0];
+var pad2_vel = [0, 0]
+var pad_speed = 2;
 
 function drawCircle(x, y, r) {
     ctx.beginPath();
@@ -45,39 +46,21 @@ function drawTable() {
 
 function checkKeyDown(event) {
     switch(event.keyCode) {
-        case 38: // Up arrow
-            if ((pad2_pos[1] - PAD_HEIGHT / 2) <= 0) {
-                pad2_vel[1] = 0;
-            }
-            else {
-                pad2_vel[1] = -2;
-            }
+        // Up arrow
+        case 38:
+            pad2_vel[1] = -pad_speed;
             break;
-        case 40: // Down arrow
-            if ((pad2_pos[1] + PAD_HEIGHT / 2) >= HEIGHT) {
-                pad2_vel[1] = 0;
-            }
-            else {
-                pad2_vel[1] = 2;
-            }
+        // Down arrow
+        case 40:
+            pad2_vel[1] = pad_speed;
             break;
-        case 87: // W
-            if ((pad1_pos[1] - PAD_HEIGHT / 2) <= 0) {
-                pad1_vel[1] = 0;
-                pad1_pos[1] = PAD_HEIGHT/2;
-            }
-            else {
-                pad1_vel[1] = -2;
-            }
+        // W
+        case 87:
+            pad1_vel[1] = -pad_speed;
             break;
-        case 83: // S
-            if ((pad1_pos[1] + PAD_HEIGHT / 2) >= HEIGHT) {
-                pad1_vel[1] = 0;
-                pad1_pos[1] = HEIGHT - (PAD_HEIGHT/2);
-            }
-            else {
-                pad1_vel[1] = 2;
-            }
+        // S
+        case 83:
+            pad1_vel[1] = pad_speed;
             break;
     }
 }
@@ -121,27 +104,43 @@ function updateBallPosition() {
 
     // check collision with gutter
     // left side
-    if (ball_pos[0] <= 0) {
-
-        ball_vel = [1, -1];
-        initBall();
+    if (ball_pos[0] - ball_radius <= PAD_WIDTH) {
+        if (ball_pos[1] >= pad1_pos[1] - PAD_HEIGHT/2 && ball_pos[1] <= pad1_pos[1] + PAD_HEIGHT/2) {
+            ball_vel[0] = -ball_vel[0];
+        }
+        else {
+            ball_vel = [1, -1];
+            initBall();
+        }
     }
     // right side
-    else if (ball_pos[0] >= WIDTH) {
-        ball_vel = [-1, -1];
-        initBall();
+    if (ball_pos[0] + ball_radius >= WIDTH - PAD_WIDTH) {
+        if (ball_pos[1] >= pad2_pos[1] - PAD_HEIGHT/2 && ball_pos[1] <= pad2_pos[1] + PAD_HEIGHT/2) {
+            ball_vel[0] = -ball_vel[0];
+        }
+        else {
+            ball_vel = [-1, -1];
+            initBall();
+        }
     }
 
     ball_pos[0] += ball_vel[0];
     ball_pos[1] += ball_vel[1];
 }
 
-function updatePositions() {
+function updatePadsPositions() {
+    // Just updates the positions if inside the limits
+    // Left paddle
+    // top limit
+    if (pad1_pos[1] + pad1_vel[1] - (PAD_HEIGHT / 2) > 0 && pad1_pos[1] + pad1_vel[1] + (PAD_HEIGHT / 2) < HEIGHT) {
+        pad1_pos[1] += pad1_vel[1];
+    }
 
-    //pad1_pos[0] += pad1_vel[0];
-    pad1_pos[1] += pad1_vel[1];
-    //pad2_pos[0] += pad2_vel[0];
-    pad2_pos[1] += pad2_vel[1];
+    // Right paddle
+    // top limit
+    if (pad2_pos[1] + pad2_vel[1] - (PAD_HEIGHT / 2) > 0 && pad2_pos[1] + pad2_vel[1] + (PAD_HEIGHT / 2) < HEIGHT) {
+        pad2_pos[1] += pad2_vel[1];
+    }
 }
 
 function draw() {
@@ -153,12 +152,12 @@ function draw() {
     drawTable();
 
     updateBallPosition();
-    updatePositions();
+    updatePadsPositions();
 
     drawCircle(ball_pos[0], ball_pos[1], ball_radius);
-    // draw left paddle
+    // left paddle
     drawRect(0, pad1_pos[1] - PAD_HEIGHT/2, PAD_WIDTH, PAD_HEIGHT);
-    // draw right paddle
+    // right paddle
     drawRect(WIDTH - PAD_WIDTH, pad2_pos[1] - PAD_HEIGHT/2, PAD_WIDTH, PAD_HEIGHT);
 }
 
