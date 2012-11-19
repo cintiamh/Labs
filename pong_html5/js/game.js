@@ -13,7 +13,7 @@ var pad2_pos = [WIDTH - PAD_WIDTH/2, HEIGHT/2];
 var pad1_vel = [0, 0];
 var pad2_vel = [0, 0]
 var pad_speed = 2;
-var ball_speed = 1;
+var score1, score2;
 
 function drawCircle(x, y, r) {
     ctx.beginPath();
@@ -90,6 +90,8 @@ function clear() {
 function init() {
     canvas = document.getElementById("game_window");
     ctx = canvas.getContext("2d");
+    score1 = 0;
+    score2 = 0;
     return setInterval(draw, 10);
 }
 
@@ -113,6 +115,7 @@ function updateBallPosition() {
             ball_vel[1] = ((ball_pos[1] - pad1_pos[1]) / (PAD_HEIGHT/2)) + ball_vel[1];
         }
         else {
+            score2 += 1;
             ball_vel = [1, 0];
             initBall();
         }
@@ -126,6 +129,7 @@ function updateBallPosition() {
             ball_vel[1] = ((ball_pos[1] - pad2_pos[1]) / (PAD_HEIGHT/2)) + ball_vel[1];
         }
         else {
+            score1 += 1;
             ball_vel = [-1, 0];
             initBall();
         }
@@ -160,6 +164,9 @@ function draw() {
 
     updateBallPosition();
     updatePadsPositions();
+    ctx.font = 'bold 30px sans-serif';
+    ctx.fillText(score1, WIDTH/3, HEIGHT/6);
+    ctx.fillText(score2, 2*WIDTH/3, HEIGHT/6);
 
     drawCircle(ball_pos[0], ball_pos[1], ball_radius);
     // left paddle
