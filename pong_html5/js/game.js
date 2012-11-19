@@ -13,6 +13,7 @@ var pad2_pos = [WIDTH - PAD_WIDTH/2, HEIGHT/2];
 var pad1_vel = [0, 0];
 var pad2_vel = [0, 0]
 var pad_speed = 2;
+var ball_speed = 1;
 
 function drawCircle(x, y, r) {
     ctx.beginPath();
