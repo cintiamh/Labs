@@ -1,16 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Pong - The game</title>
-    <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+    <meta charset="UTF-8" />
+    <title>Cintia Higashi's Lab - Pong</title>
+    <link rel="shortcut icon" href="http://portfolio.pandajapa.com/favicon.ico" />
+    <link href='http://fonts.googleapis.com/css?family=Sarina' rel='stylesheet' type='text/css'>
+    <link href="../css/layout.css" rel="stylesheet" />
+    <script src="../js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-34096887-1']);
+        _gaq.push(['_trackPageview']); (function() {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
 
-    <link rel="stylesheet" type="text/css" href="../css/layout.css">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </script>
 </head>
 <body>
-    <canvas id="game_window" width="800" height="600">
-        I'm sorry. Your browser doesn't support HTML5 canvas.
-    </canvas>
-    <script type="text/javascript" src="js/game.js"></script>
+<div id="wrapper">
+    <div id="header_content">
+        <header>
+            <h1>Cintia's Lab</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="../index.html">Lab</a>
+                    </li>
+                    <li>
+                        <a href="http://portfolio.pandajapa.com/">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="http://portfolio.pandajapa.com/about/index">About</a>
+                    </li>
+                    <li>
+                        <a href="http://portfolio.pandajapa.com/contacts/new">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <div class="main_content">
+        <section id="center">
+            <h2>Pong - The game</h2>
+            <p><a href="https://github.com/cintiamh/Labs/tree/master/pong_html5" target="_blank">GitHub</a></p>
+            <canvas id="game_window" width="800" height="600">
+                I'm sorry. Your browser doesn't support HTML5 canvas.
+            </canvas>
+            <h3>Controls</h3>
+            <ul>
+                <li>Left paddle: "W" and "S"</li>
+                <li>Right paddle: "O" and "L"</li>
+            </ul>
+            <p>
+                Simple Pong game clone wrote in pure JavaScript. It requires 2 players.
+            </p>
+        </section>
+        <footer>
+            <p>
+                2012 pandajapa.com
+            </p>
+        </footer>
+    </div>
+</div>
+<script type="text/javascript" src="js/game.js"></script>
 </body>
 </html>

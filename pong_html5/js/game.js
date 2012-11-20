@@ -7,12 +7,12 @@ var PAD_WIDTH = 20;
 var PAD_HEIGHT = 100;
 var ball_pos = [WIDTH/2, HEIGHT/2];
 var ball_radius = 15;
-var ball_vel = [1, 0];
+var ball_vel = [2, 0];
 var pad1_pos = [PAD_WIDTH/2, HEIGHT/2];
 var pad2_pos = [WIDTH - PAD_WIDTH/2, HEIGHT/2];
 var pad1_vel = [0, 0];
 var pad2_vel = [0, 0]
-var pad_speed = 2;
+var pad_speed = 3;
 var score1, score2;
 
 function drawCircle(x, y, r) {
@@ -47,12 +47,12 @@ function drawTable() {
 
 function checkKeyDown(event) {
     switch(event.keyCode) {
-        // Up arrow
-        case 38:
+        // O
+        case 79:
             pad2_vel[1] = -pad_speed;
             break;
-        // Down arrow
-        case 40:
+        // L
+        case 76:
             pad2_vel[1] = pad_speed;
             break;
         // W
@@ -68,10 +68,10 @@ function checkKeyDown(event) {
 
 function checkKeyUp(event) {
     switch(event.keyCode) {
-        case 38: // Up arrow
+        case 79: // O
             pad2_vel[1] = 0;
             break;
-        case 40: // Down arrow
+        case 76: // L
             pad2_vel[1] = 0;
             break;
         case 87: // W
@@ -92,7 +92,7 @@ function init() {
     ctx = canvas.getContext("2d");
     score1 = 0;
     score2 = 0;
-    return setInterval(draw, 10);
+    return setInterval(draw, 17);
 }
 
 function initBall() {
