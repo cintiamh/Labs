@@ -21,28 +21,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Tetris3D/index.html">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bejeweled/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="21" selection-start="117" selection-end="117" vertical-scroll-proportion="0.08278146">
+            <state line="24" column="80" selection-start="1098" selection-end="1098" vertical-scroll-proportion="-15.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tetris3D/js/game.coffee">
+      <file leaf-file-name="mobile.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bejeweled/styles/mobile.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="102" selection-start="767" selection-end="767" vertical-scroll-proportion="0.0">
+            <state line="49" column="26" selection-start="927" selection-end="927" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dom.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bejeweled/scripts/dom.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="19" selection-start="839" selection-end="839" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="game.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tetris3D/js/game.js">
+        <entry file="file://$PROJECT_DIR$/bejeweled/scripts/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="10" column="18" selection-start="338" selection-end="338" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="board.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bejeweled/scripts/board.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="142" column="73" selection-start="3705" selection-end="3705" vertical-scroll-proportion="0.5704846">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="screen.main-menu.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bejeweled/scripts/screen.main-menu.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="6" selection-start="553" selection-end="553" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loader.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bejeweled/scripts/loader.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="18" selection-start="406" selection-end="410" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="screen.splash-install.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bejeweled/scripts/screen.splash-install.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="5" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="screen.splash.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bejeweled/scripts/screen.splash.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="11" selection-start="382" selection-end="415" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bejeweled/styles/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="99" column="20" selection-start="1635" selection-end="1635" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -61,19 +124,29 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/pong_html5/index.html" />
         <option value="$PROJECT_DIR$/pong_html5/js/game.js" />
         <option value="$PROJECT_DIR$/Tetris3D/js/game.js" />
         <option value="$PROJECT_DIR$/Tetris3D/game.js" />
         <option value="$PROJECT_DIR$/Tetris3D/index.html" />
         <option value="$PROJECT_DIR$/Tetris3D/game.coffee" />
+        <option value="$PROJECT_DIR$/bejeweled/scripts/screen.splash.js" />
+        <option value="$PROJECT_DIR$/bejeweled/scripts/dom.js" />
+        <option value="$PROJECT_DIR$/bejeweled/scripts/screen.main-menu.js" />
+        <option value="$PROJECT_DIR$/bejeweled/styles/mobile.css" />
+        <option value="$PROJECT_DIR$/bejeweled/scripts/screen.splash-install.js" />
+        <option value="$PROJECT_DIR$/bejeweled/index.html" />
+        <option value="$PROJECT_DIR$/bejeweled/styles/main.css" />
+        <option value="$PROJECT_DIR$/bejeweled/scripts/game.js" />
+        <option value="$PROJECT_DIR$/bejeweled/scripts/loader.js" />
+        <option value="$PROJECT_DIR$/bejeweled/scripts/board.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="624" />
     <option name="y" value="22" />
-    <option name="width" value="1920" />
+    <option name="width" value="1296" />
     <option name="height" value="1054" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -102,6 +175,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -130,7 +204,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris3D" />
+              <option name="myItemId" value="bejeweled" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -144,11 +218,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Tetris3D" />
+              <option name="myItemId" value="bejeweled" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="styles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -162,13 +236,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pong_html5" />
+              <option name="myItemId" value="bejeweled" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -254,14 +331,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1920" height="1054" extended-state="6" />
+    <frame x="624" y="22" width="1296" height="1054" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20971185" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.188" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -331,84 +408,17 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pong_html5/js/game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="19" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pong_html5/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="22" column="60" selection-start="486" selection-end="486" vertical-scroll-proportion="0.016129032" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pong_html5/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="50" selection-start="343" selection-end="343" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pong_html5/js/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="47" selection-start="2631" selection-end="2631" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pong_html5/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/snow_particles/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="46" selection-start="0" selection-end="1805" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pong_html5/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/layout.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="118" selection-start="2047" selection-end="2047" vertical-scroll-proportion="0.3617021" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pong_html5/js/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="60" selection-start="486" selection-end="486" vertical-scroll-proportion="0.016129032">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pong_html5/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="44" selection-start="2205" selection-end="2205" vertical-scroll-proportion="0.6523179">
-          <folding />
-        </state>
+        <state line="56" column="44" selection-start="2205" selection-end="2205" vertical-scroll-proportion="0.6523179" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tetris3D/js/three.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tetris3D/js/game.js">
@@ -427,7 +437,77 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tetris3D/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="21" selection-start="117" selection-end="117" vertical-scroll-proportion="0.08278146">
+        <state line="5" column="21" selection-start="117" selection-end="117" vertical-scroll-proportion="-3.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bejeweled/scripts/dom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="19" selection-start="839" selection-end="839" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bejeweled/styles/mobile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="26" selection-start="927" selection-end="927" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bejeweled/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="80" selection-start="1098" selection-end="1098" vertical-scroll-proportion="-15.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bejeweled/styles/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="99" column="20" selection-start="1635" selection-end="1635" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bejeweled/scripts/screen.main-menu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="6" selection-start="553" selection-end="553" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bejeweled/scripts/screen.splash-install.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="5" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bejeweled/scripts/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="18" selection-start="338" selection-end="338" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bejeweled/scripts/loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="18" selection-start="406" selection-end="410" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bejeweled/scripts/screen.splash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="11" selection-start="382" selection-end="415" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bejeweled/scripts/board.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="142" column="73" selection-start="3705" selection-end="3705" vertical-scroll-proportion="0.5704846">
           <folding />
         </state>
       </provider>

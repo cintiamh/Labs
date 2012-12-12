@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <!-- Enabling Web Application Mode -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Bejeweled by PandaJapa</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/mobile.css"
+          media="screen and (max-device-width:768px) and (orientation: portrait),
+          screen and (max-device-width: 1024px) and (orientation: landscape)">
+    <script type="text/javascript" src="scripts/modernizr.js"></script>
+    <script type="text/javascript" src="scripts/loader.js"></script>
+</head>
+<body>
+    <div id="game">
+        <div class="screen" id="splash-screen">
+            <h1 class="logo">Bejeweled by PandaJapa</h1>
+            <span>Click to continue</span>
+        </div>
+        <div class="screen" id="install-screen">
+            <h1 class="logo">Bejeweled by PandaJapa</h1>
+            <span>
+                Click on install button to install the game to your home screen.
+            </span>
+        </div>
+        <div class="screen" id="main-menu">
+            <h1 class="logo">Bejeweled by PandaJapa</h1>
+            <ul class="menu">
+                <li><button name="game-screen">Play</button></li>
+                <li><button name="hiscore">Highscore</button></li>
+                <li><button name="about">About</button></li>
+                <li><button name="exit-screen">Exit</button></li>
+            </ul>
+        </div>
+        <div class="screen" id="game-screen"></div>
+        <div class="screen" id="high-scores"></div>
+    </div>
+</body>
+</html>

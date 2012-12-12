@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+}
+
+#game {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 40px;
+    width: 8em;
+    height: 12em;
+    background-color: #222222;
+    font-family: Verdana;
+    color: #FFEEEE;
+}
+
+#game .screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 10;
+}
+
+#game .screen.active {
+    display: block;
+}
+
+#splash-screen {
+    text-align: center;
+    padding-top: 2.5em;
+    background-color: #222222;
+}
+
+#splash-screen .continue {
+    cursor: pointer;
+    font-size: 0.6em;
+}
+
+.logo {
+    font-family: Georgia;
+    font-size: 1em;
+    line-height: 1em;
+    margin: 0;
+    text-align: center;
+    color: #FF3333;
+    text-shadow: 0.03em 0.03em 0.03em #FFCCCC;
+}
+
+/* Main menu styles */
+
+#main-menu {
+    padding-top: 1em;
+    background-color: #222222;
+}
+
+ul.menu {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+ul.menu li {
+    margin: 0.8em 0;
+}
+
+ul.menu li button {
+    font-family: Georgia;
+    font-size: 0.6em;
+    color: #556600;
+    width: 10em;
+    height: 1.5em;
+    background: #102000;
+    border: 0.1em solid #FFFF00;
+    border-radius: 0.5em;
+    -webkit-box-shadow: 0.2em 0.2em 0.3em #000000;
+    -moz-box-shadow: 0.2em 0.2em 0.3em #000000;
+    box-shadow: 0.2em 0.2em 0.3em #000000;
+}
+
+ul.menu li button:hover {
+    background: #304000;
+}
+
+ul.menu li button:active {
+    color: #FFFF00;
+    background: #304000;
+}
+
+/* Install screen for iOS devices */
+#install-screen {
+    padding-top: 0.5em;
+    text-align: center;
+}
+
+#install-screen span {
+    font-size: 0.75em;
+    display: inline-block;
+    padding: 0 0.5em;
+}
