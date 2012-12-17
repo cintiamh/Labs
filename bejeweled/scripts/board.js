@@ -28,6 +28,11 @@ jewel.board = (function() {
                 jewels[x][y] = type;
             }
         }
+
+        // recursive fill if new board has no moves
+        if (!hasMoves()) {
+            fillBoard();
+        }
     }
 
     function getJewel(x, y) {
@@ -40,6 +45,7 @@ jewel.board = (function() {
     }
 
     function initialize(callback) {
+        //fillBoard();
         settings = jewels.settings;
         numJewelTypes = settings.numJewelTypes;
         baseScore = settings.baseScore;
@@ -123,7 +129,7 @@ jewel.board = (function() {
         return chains;
     }
 
-    function check() {
+    function check(events) {
         var chains = getChains(),
             hadChains = false, score = 0,
             removed = [], moved = [], gaps = [];
@@ -161,6 +167,83 @@ jewel.board = (function() {
                 type : jewels[x][y]
             });
         }
+
+        events = events || [];
+
+        if (hadChains) {
+            events.push({
+                type : "remove",
+                data : removed
+            }, {
+                type : "score",
+                data : score
+            }, {
+                type : "move",
+                data : moved
+            });
+
+            // refill if no more moves
+            if (!hasMoves()) {
+                fillBoard();
+                events.push({
+                    type : "refill",
+                    data : getBoard()
+                });
+            }
+            return check(events);
+        } else {
+            return events;
+        }
+    }
+
+    // returns true if at least one match can be made
+    function hasMoves() {
+        for (var x = 0; x < cols; x++) {
+            for (var y = 0; y < rows; y++) {
+                if (canJewelMove(x, y)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    // returns tru if (x, y) is a valid position and if the jewel at (x, y) can be swapped with a neighbor
+    function canJewelMove(x, y) {
+        return ((x > 0 && canSwap(x, y, x - 1, y)) ||
+            (x < cols - 1 && canSwap(x, y, x + 1, y)) ||
+            (y > 0 && canSwap(x, y, x, y - 1)) ||
+            (y < rows - 1 && canSwap(x, y, x, y + 1)));
+    }
+
+    // create a copy of the jewel board
+    function getBoard() {
+        var copy = [],
+            x;
+        for (x = 0; x < cols; x++) {
+            copy[x] = jewels[x].slice(0);
+        }
+        return copy;
+    }
+
+    // if possible, swaps (x1, y1) and (x2, y2) and calls the callback function with list of board events
+    function swap(x1, y1, x2, y2, callback) {
+        var tmp,
+            events;
+
+        if (canSwap(x1, y1, x2, y2)) {
+            // swap the jewels
+            tmp = getJewel(x1, y1);
+            jewels[x1][y1] = getJewel(x2, y2);
+            jewels[x2][y2] = tmp;
+
+            // check the board and get list of events
+            events = check();
+            callback(events);
+        }
+        else {
+            callback(false);
+        }
     }
 
     function print() {
@@ -177,6 +260,8 @@ jewel.board = (function() {
     return {
         initialize : initialize,
         canSwap : canSwap,
-        print : print
+        print : print,
+        getBoard : getBoard,
+        swap : swap
     };
 })();
