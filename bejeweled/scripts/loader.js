@@ -14,6 +14,12 @@ window.addEventListener("load", function(){
         return(window.navigator.standalone != false);
     });
 
+    // extend yepnope with preloading
+    yepnope.addPrefix("preload", function(resource){
+        resource.noexec = true;
+        return resource;
+    });
+
     // start dynamic loading
     // loading stage 1
     Modernizr.load([
@@ -50,9 +56,15 @@ window.addEventListener("load", function(){
         Modernizr.load([
             {
                 load: [
-                    "scripts/screen.main-menu.js",
-                    "scripts/board.js"
+                    "scripts/screen.main-menu.js"
                 ]
+            }, {
+                test: Modernizr.webworkers,
+                yep: [
+                    "scripts/board.worker-interface.js",
+                    "preload!scripts/board.worker.js"
+                ],
+                nope: "scripts/board.js"
             }
         ]);
     }
