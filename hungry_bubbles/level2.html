@@ -4,8 +4,21 @@
 		<meta charset="UTF-8" />
 		<title>Cintia Higashi's Lab - Hungry Bubbles</title>
 		<link rel="shortcut icon" href="http://portfolio.pandajapa.com/favicon.ico" />
-		<link href='http://fonts.googleapis.com/css?family=Sarina' rel='stylesheet' type='text/css'>
-		<link href="../css/layout.css" rel="stylesheet" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- Bootstrap -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="../css/styles.css" rel="stylesheet" media="screen">
+        <link href="../css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
 		<link href="css/lightbox.css" rel="stylesheet" />
 		<script src="js/processing.js"></script>
 		<script src="js/jquery-1.7.2.min.js"></script>
@@ -25,30 +38,29 @@
 		</script>
 	</head>
 	<body>
-		<div id="wrapper">
-			<div id="header_content">
-				<header>
-					<h1>Cintia's Lab</h1>
-					<nav>
-						<ul>
-							<li>
-								<a href="../index.html">Lab</a>
-							</li>
-							<li>
-								<a href="http://portfolio.pandajapa.com/">Portfolio</a>
-							</li>
-							<li>
-								<a href="http://portfolio.pandajapa.com/about/index">About</a>
-							</li>
-							<li>
-								<a href="http://portfolio.pandajapa.com/contacts/new">Contact</a>
-							</li>
-						</ul>
-					</nav>
-				</header>
-			</div>
-			<div class="main_content">
-				<section id="center">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="#">Cintia Higashi</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li class="active"><a href="http://lab.pandajapa.com/">Lab</a></li>
+                        <li><a href="http://portfolio.pandajapa.com/projects/index">Portfolio</a></li>
+                        <li><a href="http://portfolio.pandajapa.com/about/index">About</a></li>
+                        <li><a href="http://portfolio.pandajapa.com/contacts/new">Contact</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="span12">
 					<h2>Hungry Bubbles</h2>
 					<p>
 						<a href="images/tutorial1_500x375.png" rel="lightbox[roadtrip]">Tutorial</a>
@@ -63,11 +75,7 @@
 						<canvas data-processing-sources="pde/game2.pde"></canvas>
 					</div>
 				</section>
-				<footer>
-					<p>
-						2012 pandajapa.com
-					</p>
-				</footer>
+				</div>
 			</div>
 		</div>
 	</body>
