@@ -1,0 +1,34 @@
+body {
+    padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+    color: #131723;
+    background-color: #FFF0CF;
+}
+
+h1 {
+    color: #FE5A27;
+    /*color: #DD577A;*/
+}
+
+h2, h3 {
+    color: #FE5A27;
+}
+
+a {
+    color: #49AEC0;
+}
+
+a:hover {
+    color: #49AEC0;
+    text-decoration: none;
+
+}
+
+.project_box {
+    border:1px solid #FE5A27;
+    border-radius:10px;
+    -moz-border-radius:10px; /* Old Firefox */
+    background-color: #FFFFFF;
+    margin-bottom: 20px;
+    padding: 20px;
+    padding-top: 10px;
+}
