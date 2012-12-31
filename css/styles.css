@@ -1,26 +1,46 @@
 body {
-    padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-    color: #131723;
+    padding-top: 60px;
     background-color: #FFF0CF;
 }
 
-h1 {
-    color: #FE5A27;
-    /*color: #DD577A;*/
+body {
+    color: #131723;
+    background-color: #FFF0CF;
+    text-shadow: 1px 1px 1px #FFFFFF;
 }
 
-h2, h3 {
+h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia;
     color: #FE5A27;
+    text-shadow: 1px 1px 0px #FFFFFF;
 }
 
 a {
     color: #49AEC0;
+    text-decoration: none;
 }
 
 a:hover {
     color: #49AEC0;
-    text-decoration: none;
+    text-decoration: underline;
+}
 
+img.cintia_pic {
+    padding: 5px 5px 10px 5px;
+    border: 1px solid #999999;
+    float: left;
+    margin-right: 20px;
+}
+
+.gallery{
+    position: relative;
+    overflow: hidden;
+    background-color: #666;
+    padding: 12px;
+
+    /* Add height & width properties to fix the size of gallery. */
+    height: 400px;
+    width: 700px;
 }
 
 .project_box {
@@ -31,4 +51,17 @@ a:hover {
     margin-bottom: 20px;
     padding: 20px;
     padding-top: 10px;
+}
+
+.project_image {
+    width: 100%;
+    height: 200px;
+    background-color: #333;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.input-large {
+    width: 100%;
+    max-width: 500px;
 }

@@ -2,14 +2,21 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<title>Cintia Higashi's Lab - Hungry Bubbles</title>
+		<title>Cintia Higashi's Lab</title>
 		<link rel="shortcut icon" href="http://portfolio.pandajapa.com/favicon.ico" />
-		<link href='http://fonts.googleapis.com/css?family=Sarina' rel='stylesheet' type='text/css'>
-		<link href="css/layout.css" rel="stylesheet" />
-		<link href="css/projects.css" rel="stylesheet" />
-		<link href="css/lightbox.css" rel="stylesheet" />
-		<script src="js/jquery-1.7.2.min.js"></script>
-		<script src="js/lightbox.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/styles.css" rel="stylesheet" media="screen">
+        <link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
 			_gaq.push(['_setAccount', 'UA-34096887-1']);
@@ -25,74 +32,85 @@
 		</script>
 	</head>
 	<body>
-		<div id="wrapper">
-			<div id="header_content">
-				<header>
-					<h1>Cintia's Lab</h1>
-					<nav>
-						<ul>
-							<li>
-								<a href="#">Lab</a>
-							</li>
-							<li>
-								<a href="http://portfolio.pandajapa.com/">Portfolio</a>
-							</li>
-							<li>
-								<a href="http://portfolio.pandajapa.com/about/index">About</a>
-							</li>
-							<li>
-								<a href="http://portfolio.pandajapa.com/contacts/new">Contact</a>
-							</li>
-						</ul>
-					</nav>
-				</header>
-			</div>
-			<div class="main_content">
-				<section id="center">
-                    <article class="project_item">
-                        <h1>Pong</h1>
-                        <div class="project_image">
-                            <a href="pong_html5/index.html"> <img src="images/pong.png"  alt="HTML5 Pong" /> </a>
-                        </div>
-                        <p class="project_link">
-                            <a href="pong_html5/index.html">Classic Pong game developed in HTML5 with pure JavaScript.</a>
-                        </p>
-                    </article>
-					<article class="project_item">
-						<h1>Hungry Bubbles</h1>
-						<div class="project_image">
-							<a href="hungry_bubbles/index.html"> <img src="images/hungry_bubbles.png"  alt="Hungry Bubbles Game" /> </a>
-						</div>
-						<p class="project_link">
-							<a href="hungry_bubbles/index.html">Simple HTML5 game developed using Processing.js. </a>
-						</p>
-					</article>
-					<article class="project_item">
-						<h1>HTML5 Snow Particles</h1>
-						<div class="project_image">
-							<a href="snow_particles/index.html"> <img src="images/snow_particles.png"  alt="HTML5 Snow Particles" /> </a>
-						</div>
-						<p class="project_link">
-							<a href="snow_particles/index.html">Simple HTML5 animation that resembles a little bit a snow shower. </a>
-						</p>
-					</article>
-					<article class="project_item">
-						<h1>Simple HTML5 Charts</h1>
-						<div class="project_image">
-							<a href="simple_charts/index.html"> <img src="images/simple_charts.png"  alt="Simple HTML5 Charts" /> </a>
-						</div>
-						<p class="project_link">
-							<a href="simple_charts/index.html">Simple HTML5 charts examples: bar chart, line chart and pie chart. </a>
-						</p>
-					</article>
-					
-				</section>
-				<footer>
-					<p>
-						2012 pandajapa.com
-					</p>
-				</footer>
-			</div>
-		</div>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="#">Cintia Higashi</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li class="active"><a href="http://lab.pandajapa.com/">Lab</a></li>
+                        <li><a href="http://portfolio.pandajapa.com/projects/index">Portfolio</a></li>
+                        <li><a href="http://portfolio.pandajapa.com/about/index">About</a></li>
+                        <li><a href="http://portfolio.pandajapa.com/contacts/new">Contact</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+	<div class="container">
+        <div class="row">
+            <div class="span12">
+                <h1>Cintia Higashi</h1>
+                <h2>Web and Game Developer</h2>
+                <p>
+                    These are some of my last experiments with new technologies. Have fun playing and learning from it.
+                    (^o^)p
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span6">
+                <div class="project_box">
+                    <h3>Pong</h3>
+                    <div class="project_image">
+                        <a href="pong_html5/index.html"> <img src="images/pong.png"  alt="HTML5 Pong" /></a>
+                    </div>
+                    <p>
+                        <a href="pong_html5/index.html">Classic Pong game developed in HTML5 with pure JavaScript.</a>
+                    </p>
+                </div>
+            </div>
+            <div class="span6">
+                <div class="project_box">
+                    <h3>Hungry Bubbles</h3>
+                    <div class="project_image">
+                        <a href="hungry_bubbles/index.html"> <img src="images/hungry_bubbles.png"  alt="Hungry Bubbles Game" /> </a>
+                    </div>
+                    <p>
+                        <a href="hungry_bubbles/index.html">Simple HTML5 game developed using Processing.js. </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span6">
+                <div class="project_box">
+                    <h3>HTML5 Snow Particles</h3>
+                    <div class="project_image">
+                        <a href="snow_particles/index.html"> <img src="images/snow_particles.png"  alt="HTML5 Snow Particles" /> </a>
+                    </div>
+                    <p>
+                        <a href="snow_particles/index.html">Simple HTML5 animation that resembles a little bit a snow shower. </a>
+                    </p>
+                </div>
+            </div>
+            <div class="span6">
+                <div class="project_box">
+                    <h3>Simple HTML5 Charts</h3>
+                    <div class="project_image">
+                        <a href="simple_charts/index.html"> <img src="images/simple_charts.png"  alt="Simple HTML5 Charts" /> </a>
+                    </div>
+                    <p>
+                        <a href="simple_charts/index.html">Simple HTML5 charts examples: bar chart, line chart and pie chart. </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 	</body>
 </html>
